@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Button, Image, TouchableHighlight, Alert } from 'react-native';
-import { AppLoading, Font } from 'expo';
-import { style } from 'expo/src/Font';
+import { StyleSheet, Text, View, TextInput, Image, TouchableHighlight, Alert } from 'react-native';
+import { Font } from 'expo';
+import BlockCustomizedTextBox from './components/BlockCustomizedTextBox.js';
 
 
 const myButtonStyles = StyleSheet.create({
@@ -96,10 +96,10 @@ export default class App extends React.Component {
             />
           </View>
           <View style={[styles.roundedBorder, styles.mb4]}>
-            <TextInput style={styles.base} keyboardType="email-address" placeholder="Email Address"></TextInput>
+            <BlockCustomizedTextBox style={styles.base} placeholder="Email Address" keyboardType="email-address"/>
           </View>
           <View style={[styles.roundedBorder, styles.mb4]}>
-            <TextInput secureTextEntry={true} returnKeyType="go" style={[styles.base]} placeholder="Password"></TextInput>
+            <BlockCustomizedTextBox style={styles.base} placeholder="Password" secureTextEntry={true} returnKeyType="go"/>
           </View>
 
 
