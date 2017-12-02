@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View,  Image,  Alert } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert } from 'react-native';
 
 import HorizontalLine from '../components/HorizontalLine';
 import Button from '../components/Button';
@@ -33,10 +33,10 @@ export default class Login extends React.Component {
         <View style={[BaseStyles.container]}>
 
 
-        <View style={BaseStyles.centerChild} >
+          <View style={BaseStyles.centerChild} >
             <Logo style={[BaseStyles.mb4, { marginTop: 100 }]}>
             </Logo>
-          
+
           </View>
 
 

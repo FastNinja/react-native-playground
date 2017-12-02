@@ -1,14 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, Image, TouchableHighlight, Alert } from 'react-native';
+import { Alert } from 'react-native';
 import { Font } from 'expo';
-import HorizontalLine from './components/HorizontalLine';
-import Button from './components/Button';
-import LinkButton from './components/LinkButton';
-import RoundedInput from './components/RoundedInput';
-import Logo from './components/Logo';
+
 import { ButtonStyles, BaseStyles } from './components/Style';
 
 import Login from './screens/Login';
+import Signup from './screens/Signup';
+import Main from './screens/Main';
 
 export default class App extends React.Component {
   state = {
@@ -43,9 +41,9 @@ export default class App extends React.Component {
       return <View style={BaseStyles.container} />
     }
     return (
-      <Login>
+      <Main>
 
-      </Login>
+      </Main>
     );
   }
 }
