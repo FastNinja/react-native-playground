@@ -13,18 +13,21 @@ export default class Signup extends React.Component {
     componentWillMount() {
     }
 
-    onLogin() {
-        Alert.alert('Login!');
+    onLogin(navigation) {
+        navigation.navigate('Login');
     }
 
-
-    onSignup() {
-        Alert.alert('signup!');
+    onSignup(navigation) {
+        navigation.navigate('Main');
     }
 
     render() {
+
+        var { onLogin, onSignup, navigation } = this.props;
+
         return (
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+            <View style={BaseStyles.screen}>
+            
 
                 <View style={[BaseStyles.container]}>
 
@@ -49,7 +52,9 @@ export default class Signup extends React.Component {
                     <Button
                         style={BaseStyles.mb4}
                         title="Sign up"
-                        onPress={this.onSignup}>
+                        // onPress={this.onSignup}
+                        onPress={() => this.onSignup(navigation)}
+                    >
                     </Button>
 
                     <HorizontalLine style={BaseStyles.mb4} />
@@ -63,7 +68,9 @@ export default class Signup extends React.Component {
                     <LinkButton
                         style={BaseStyles.mb4}
                         title="Login"
-                        onPress={this.onLogin}>
+                        //                        onPress={onLogin}
+                        onPress={() => this.onLogin(navigation)}
+                    >
                     </LinkButton>
 
                 </View>

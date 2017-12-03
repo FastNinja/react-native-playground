@@ -11,24 +11,28 @@ import { ButtonStyles, BaseStyles } from '../components/Style';
 
 export default class Login extends React.Component {
 
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: null,
+      password: null
+    };
   }
 
-  onLogin() {
-    Alert.alert('Login!');
+  onLogin(navigation){
+    navigation.navigate('Main');
   }
 
-  onForget() {
-    Alert.alert('forget!');
+  onSignup(navigation){
+    navigation.navigate('Signup');
   }
 
-  onSignup() {
-    Alert.alert('signup!');
-  }
 
   render() {
+    var { onLogin, onSignup, onForget, navigation } = this.props;
+
     return (
-      <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+      <View style={BaseStyles.screen}>
 
         <View style={[BaseStyles.container]}>
 
@@ -41,10 +45,14 @@ export default class Login extends React.Component {
 
 
           <RoundedInput
+            value={this.state.email}
+            onChangeText={(email) => this.setState({ email: email })}
             placeholder="Email Address"
             keyboardType="email-address" />
 
           <RoundedInput
+            value={this.state.password}
+            onChangeText={(password) => this.setState({ password: password })}
             placeholder="Password"
             secureTextEntry={true}
             returnKeyType="go" />
@@ -52,13 +60,15 @@ export default class Login extends React.Component {
           <Button
             style={BaseStyles.mb4}
             title="Login"
-            onPress={this.onLogin}>
+            // onPress={() => onLogin(this.state.email, this.state.password)}
+            onPress={() => this.onLogin(navigation)}
+            >
           </Button>
 
           <LinkButton
             style={BaseStyles.mb4}
             title="Forget Password?"
-            onPress={this.onForget}>
+            onPress={onForget}>
           </LinkButton>
 
           <HorizontalLine style={BaseStyles.mb4} />
@@ -72,7 +82,9 @@ export default class Login extends React.Component {
           <LinkButton
             style={BaseStyles.mb4}
             title="Sign Up!"
-            onPress={this.onSignup}>
+            onPress={() => this.onSignup(navigation)}
+            // onPress={onSignup}
+            >
           </LinkButton>
 
         </View>

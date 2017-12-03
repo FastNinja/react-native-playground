@@ -41,6 +41,14 @@ const BaseStyles = StyleSheet.create({
         maxWidth: 300,
     },
 
+    screen: {
+        flex:1, 
+        flexDirection: 'row', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        backgroundColor: '#fff'
+    },
+
     logo: {
         width: 150,
         height: 103
@@ -133,6 +141,12 @@ const BaseStyles = StyleSheet.create({
         width: 42,
         height: 42
     },
+
+    redBorder:{
+        borderColor: 'red',
+        borderWidth: 1,
+        borderStyle: 'solid'
+    }
 });
 
 export { ButtonStyles, BaseStyles };

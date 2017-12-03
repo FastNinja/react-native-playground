@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'react-native';
+import { Alert, View } from 'react-native';
 import { Font } from 'expo';
 
 import { ButtonStyles, BaseStyles } from './components/Style';
@@ -7,6 +7,10 @@ import { ButtonStyles, BaseStyles } from './components/Style';
 import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Main from './screens/Main';
+
+import Stack from './navigation/Stack';
+import Workflow from './navigation/Workflow';
+
 
 export default class App extends React.Component {
   state = {
@@ -40,10 +44,12 @@ export default class App extends React.Component {
     if (!this.state.loaded) {
       return <View style={BaseStyles.container} />
     }
-    return (
-      <Main>
 
-      </Main>
+    return (
+     
+        <Stack>
+
+        </Stack>
     );
   }
 }
